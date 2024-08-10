@@ -1,14 +1,95 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cafe Gourmet</title>
-        <!-- JS -->
-        <script defer src="./Js.js"></script>
-    </head>
-    <body>
-        <h1>Reivaj Vargas</h1>
-        <p>Con el fin de crear una cafeteria Online, se presenta en Javascritp el inicio del codigo para comenzar a crear el simulador. En el se puede apreciar el uso de variables, arrays, funciones y condicionales.</p>
-    </body>
-    </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <title>Cafe Gourmet</title>
+    <!-- JS -->
+    <script defer src="./Js.js"></script>
+    <style>
+        body {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .menu-container, .resultado-container, .servicio-container, .carrito-container {
+            background-color: rgba(44, 62, 80, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .btn-custom {
+            background-color: #e67e22;
+            border-color: #d35400;
+            color: #fff;
+        }
+        .btn-custom:hover {
+            background-color: #d35400;
+            color: #fff;
+        }
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #e67e22;
+        }
+        label {
+            font-size: 1.2rem;
+        }
+        select, button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Cafetería Gourmet</h1>
+        <h2>Nuestro Menú</h2>
+        <div id="menu" class="menu-container">
+            <!-- Aquí se mostrará el menú -->
+        </div>
+
+        <div class="form-group">
+            <label for="eleccion">Elige tus opciones:</label>
+            <div class="dropdown">
+                <button class="btn btn-custom dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    Selecciona Productos
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="opcionesMenu">
+                    <!-- Opciones dinámicas con checkboxes -->
+                </ul>
+            </div>
+        </div>
+        <button onclick="agregarAlCarrito()" class="btn btn-custom btn-block mt-2">Agregar al Carrito</button>
+
+        <h2>Carrito de Compras</h2>
+        <div id="carrito" class="carrito-container">
+            <!-- Aquí se mostrará el carrito -->
+        </div>
+
+        <button onclick="calcularPrecioTotal()" class="btn btn-custom btn-block mt-2">Calcular Precio Total</button>
+
+        <div id="resultado" class="resultado-container mt-4">
+            <!-- Aquí se mostrará el resultado -->
+        </div>
+
+        <div id="servicioLlevar" class="servicio-container mt-4" style="display:none;">
+            <label for="servicio">¿Para servir o llevar?</label>
+            <select id="servicio" class="form-control">
+                <option value="servir">Servir</option>
+                <option value="llevar">Llevar</option>
+            </select>
+            <button onclick="preguntarServicioOLlevar()" class="btn btn-custom btn-block mt-2">Confirmar</button>
+        </div>
+    </div>
+
+</body>
+</html>
